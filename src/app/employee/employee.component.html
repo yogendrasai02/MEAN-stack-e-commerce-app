@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand m-auto" href="#">
+            <img src="../../assets/logos/main.png" alt="Logo" class="d-inline-block align-text-top">
+            Employee Login
+        </a>
+    </div>
+</nav>
+<div class="container m-auto">
+    <form (ngSubmit)="login()" #formRef="ngForm">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control customInput" id="email" placeholder="name@example.com" name="email"
+                ngModel>
+            <label for="email">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control customInput" id="password" placeholder="Password" name="password"
+                ngModel>
+            <label for="password">Password</label>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success customBtn">Login</button>
+        </div>
+    </form>
+</div>

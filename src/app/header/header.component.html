@@ -1,0 +1,138 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-xl">
+    <div class="container-fluid">
+        <!-- navbar toggler icon -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="burgerIcon"></div>
+            <div class="burgerIcon"></div>
+            <div class="burgerIcon"></div>
+        </button>
+        <!-- brand -->
+        <a class="navbar-brand" href="#">
+            <img src=".././assets/logos/main.png" alt="Happy supermarket logo">
+        </a>
+        <!-- navbar content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <div class="dropdown">
+                <button class="dropdownBtn">
+                    Shop by category
+                    <i class="fas fa-caret-down fa-lg"></i>
+                </button>
+                <div class="dropdownContent">
+                    <a href="" class="nav-link">Fruits and vegetables</a>
+                    <a href="" class="nav-link">Grocery</a>
+                    <a href="" class="nav-link">Snacks, biscuits & chocolates</a>
+                    <a href="" class="nav-link">Beverages</a>
+                    <a href="" class="nav-link">Personal care</a>
+                </div>
+            </div>
+            <div class="m-auto" id="searchBar">
+                <form class="d-flex">
+                    <input class="form-control customInput bg-light" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn customBtn bg-white" type="submit"><i class="fas fa-search fa-lg"></i></button>
+                </form>
+            </div>
+
+            <!-- Aligned to the right: cart, login, signup -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        Cart
+                        <span class="badge bg-light text-dark">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="fas fa-sign-in-alt fa-lg"></i>
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                        <i class="fas fa-user fa-lg"></i>
+                        Sign up
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Login modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalTitle">Login to your account</h5>
+                <button type="button" class="btn-close customBtn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control customInput" id="loginId" placeholder="mobile or email">
+                        <label for="loginId">Mobile/Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control customInput" id="password" placeholder="Password">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-success customBtn">Login</button>
+                    </div>
+                </form>
+                <hr>
+                <div class="m-2">
+                    <h5>Or login using:</h5>
+                    <a href=""><i class="fab fa-facebook fa-4x text-dark"></i></a>
+                    <a href=""><i class="fab fa-google fa-4x ms-4 text-dark"></i></a>
+                </div>
+                <hr>
+                <button class="btn btn-info customBtn" data-bs-dismiss="modal" data-bs-toggle="modal"
+                    data-bs-target="#signUpModal">New? Create an account</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sign up modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signUpModalTitle">Create a new account</h5>
+                <button type="button" class="btn-close customBtn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control customInput" id="name" placeholder="Your name">
+                        <label for="lname">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control customInput" id="mobile" placeholder="mobile number">
+                        <label for="mobile">Mobile number</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control customInput" id="newPassword" placeholder="Password">
+                        <label for="newPassword">Password</label>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-success customBtn">Create account</button>
+                    </div>
+                </form>
+                <hr>
+                <div class="m-2">
+                    <h5>Or sign up using:</h5>
+                    <a href=""><i class="fab fa-facebook fa-4x text-dark"></i></a>
+                    <a href=""><i class="fab fa-google fa-4x ms-4 text-dark"></i></a>
+                </div>
+                <hr>
+                <button class="btn btn-info customBtn" data-bs-dismiss="modal" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Existing user? Login here</button>
+            </div>
+        </div>
+    </div>
+</div>

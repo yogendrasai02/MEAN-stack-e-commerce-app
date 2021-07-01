@@ -1,0 +1,35 @@
+<app-inv-nav></app-inv-nav>
+<div class="container mb-4">
+    <h2>Categories</h2>
+    <div class="mt-2 mb-2">
+        <button class="btn btn-success customBtn me-2" (click)="loadForm('add')">Add category</button>
+    </div>
+    <h5 class="text-warning" *ngIf="categories.length == 0">No categories found</h5>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" *ngIf="categories.length > 0">
+        <div class="col" *ngFor="let category of categories" id="{{category.categoryId}}">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5>{{category.categoryName}}</h5>
+                    <button class="btn btn-primary customBtn" (click)="loadProducts(category.categoryId)">
+                        Products<span><i class="fas fa-caret-square-right ms-2"></i></span></button>
+                    <button class="btn customBtn bg-warning text-white" (click)="loadForm('upd',category.categoryId)">
+                        <span><i class="fas fa-edit ms-2"></i></span>
+                        Edit
+                    </button>
+                    <button class="btn customBtn bg-danger text-white" (click)="deleteCategory(category.categoryId)">
+                        <span><i class="fas fa-trash-alt ms-2"></i></span>
+                        Delete
+                    </button>
+
+                </div>
+                <div class="p-3">
+                    <img [src]="category.icon" class="card-img-top img-fluid border border-dark"
+                        [alt]="category.categoryName">
+                </div>
+                <div class="card-body">
+                    <span *ngFor="let sc of category.subCategories" class="badge bg-primary ms-2">{{sc}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

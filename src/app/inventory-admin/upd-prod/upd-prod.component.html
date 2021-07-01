@@ -1,0 +1,85 @@
+<app-inv-nav></app-inv-nav>
+<div class="container">
+    <h2>Update product information</h2>
+    <form (ngSubmit)="updProduct()" #formRef="ngForm" *ngIf="product">
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control customInput" id="prodId" placeholder="Product Id" name="prodId"
+                [ngModel]="product.prodId" disabled>
+            <label for="prodId">Product Id</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control customInput" id="prodName" placeholder="Product Name" name="prodName"
+                [ngModel]="product.prodName">
+            <label for="prodName">Product Name</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control customInput" id="brand" placeholder="Brand" name="brand"
+                [ngModel]="product.brand">
+            <label for="brand">Brand name</label>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="category">Category</label>
+                <select class="form-select" name="category" [(ngModel)]="selectedCategory" (change)="getSubCats()">
+                    <option selected value="None">Select a category</option>
+                    <option *ngFor="let category of categories" [value]="category.categoryName">
+                        {{category.categoryName}}
+                    </option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="subCategory">Sub category</label>
+                <select class="form-select" id="subCategories" name="subCategory" [(ngModel)]="selectedSubCategory">
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <div class="form-floating">
+                    <input type="number" class="form-control customInput" id="price" placeholder="PricePrice in Rs"
+                        name="price" [ngModel]="product.price">
+                    <label for="price">Price</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-floating">
+                    <input type="number" class="form-control customInput" id="discount" placeholder="Discount"
+                        name="discount" [ngModel]="product.discount">
+                    <label for="discount">Discount</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-floating">
+                    <input type="number" class="form-control customInput" id="maxOrderQty" name="maxOrderQty"
+                        [ngModel]="product.maxOrderQty" placeholder="Maximum order quantity">
+                    <label for="maxOrderQty">Maximum order quanitity</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control customInput" id="stock" placeholder="stock" name="stock"
+                        ngModel>
+                    <label for="stock">Stock</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control customInput" id="image" placeholder="image" name="image"
+                        [ngModel]="product.prodImages[0]">
+                    <label for="image">Image URL from cloudinary</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control customInput" id="description" rows="4" name="description"
+                [ngModel]="product.description"></textarea>
+        </div>
+        <div>
+            <button class="btn btn-success customBtn" type="submit">Update product data</button>
+        </div>
+    </form>
+</div>

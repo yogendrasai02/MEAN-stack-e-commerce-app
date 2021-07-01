@@ -1,0 +1,33 @@
+<app-inv-nav></app-inv-nav>
+<div class="container mt-1">
+    <h1>Update category data</h1>
+    <form (ngSubmit)="updateCategory()" #formRef="ngForm" *ngIf="categoryData">
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control customInput" id="categoryId" placeholder="Category Id"
+                name="categoryId" [ngModel]="categoryData.categoryId" disabled>
+            <label for="categoryId">Category Id</label>
+            <p class="bg-danger fs-4 text-white" *ngIf="cName.invalid && cName.touched">Category name is requireed</p>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control customInput" id="categoryName" placeholder="Category Name"
+                name="categoryName" [ngModel]="categoryData.categoryName" #cName="ngModel" required>
+            <label for="categoryName">Category Name</label>
+            <p class="bg-danger fs-4 text-white" *ngIf="cName.invalid && cName.touched">Category name is requireed</p>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control customInput" id="subCategories" placeholder="Sub categories"
+                name="subCategories" [ngModel]="subCatsStr">
+            <label for="subCategories">Sub categories<small>Seperate each one with a comma(,)</small></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control customInput" id="icon" placeholder="Icon" name="icon"
+                [ngModel]="categoryData.icon" #icon="ngModel" required>
+            <label for="icon">Image url from Cloudinary</label>
+            <p class="bg-danger fs-4 text-white" *ngIf="icon.invalid && icon.touched">Image is required</p>
+        </div>
+        <div>
+            <button class="btn btn-success customBtn" type="submit"
+                [disabled]="formRef.invalid && formRef.touched">Update data</button>
+        </div>
+    </form>
+</div>

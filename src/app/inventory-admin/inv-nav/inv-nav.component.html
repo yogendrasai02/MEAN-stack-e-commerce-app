@@ -1,0 +1,35 @@
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/inventory-admin">
+            <img src="../../../assets/logos/main.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="burgerIcon"></div>
+            <div class="burgerIcon"></div>
+            <div class="burgerIcon"></div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/inventory-admin"><i
+                            class="fas fa-chart-line fa-lg m-2"></i>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/inventory-admin/products"><i
+                            class="fas fa-box-open fa-lg m-2"></i>Products</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/inventory-admin/profile"><i
+                            class="fas fa-user-circle fa-lg m-2"></i>Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logout()"><i class="fas fa-sign-out-alt fa-lg m-2"></i>Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

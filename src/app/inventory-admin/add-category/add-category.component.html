@@ -1,0 +1,31 @@
+<app-inv-nav></app-inv-nav>
+<div class="container mt-1">
+    <h1>Add a category</h1>
+    <form (ngSubmit)="addCategory()" #formRef="ngForm">
+        <div class="form-floating mb-3">
+            <input type="number" name="categoryId" class="form-control customInput" id="categoryId"
+                placeholder="Category id" required disabled [value]="maxId + 1">
+            <label for="categoryId">Category ID</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="categoryName" class="form-control customInput" id="categoryName"
+                placeholder="Category name" required ngModel #cName="ngModel">
+            <label for="categoryName">Category Name</label>
+            <p class="bg-danger fs-4 text-white" *ngIf="cName.invalid && cName.touched">Category name is requireed</p>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="subCategories" class="form-control customInput" id="subCategories"
+                placeholder="Sub categories" ngModel>
+            <label for="subCategories">Sub Categories <small>Seperate each subcategory by a comma(,)</small></label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" name="icon" class="form-control customInput" id="icon" placeholder="Icon" required
+                ngModel #icon="ngModel">
+            <label for="icon">Image url from cloudinary</label>
+            <p class="bg-danger fs-4 text-white" *ngIf="icon.invalid && icon.touched">Category icon is required</p>
+        </div>
+        <div>
+            <button class="btn btn-success customBtn" [disabled]="formRef.invalid" type="submit">Add category</button>
+        </div>
+    </form>
+</div>

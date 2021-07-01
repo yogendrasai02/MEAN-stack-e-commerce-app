@@ -1,0 +1,27 @@
+/* For burger icon divs */
+.burgerIcon{
+    width: 30px;
+    margin: 5px;
+    height: 5px;
+    background-color: black;
+}
+/* navbar */
+.navbar-toggler{
+    border-radius: 0 !important;
+}
+.navbar-toggler:focus{
+    box-shadow: none !important;
+    outline: 0px !important;
+    border: 3px solid black !important;
+}
+.navbar{
+    background-color: #f6416c;
+}
+a.nav-link{
+    color: white;
+    font-size: larger;
+}
+a.nav-link:hover{
+    background-color: #F8F3D4;
+    color: black;
+}

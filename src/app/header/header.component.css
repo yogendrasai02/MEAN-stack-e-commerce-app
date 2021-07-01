@@ -1,0 +1,73 @@
+/* For burger icon divs */
+.burgerIcon{
+    width: 30px;
+    margin: 5px;
+    height: 5px;
+    background-color: black;
+}
+/* navbar */
+.navbar-toggler{
+    border-radius: 0 !important;
+}
+.navbar-toggler:focus{
+    box-shadow: none !important;
+    outline: 0px !important;
+    border: 3px solid black !important;
+}
+.navbar{
+    background-color: #f6416c;
+}
+a.nav-link{
+    color: white;
+    font-size: larger;
+}
+a.nav-link:hover{
+    background-color: #F8F3D4;
+    color: black;
+}
+#searchBar{
+    width: 40%;
+}
+@media screen and (max-width: 1199px){
+    #searchBar{
+        padding-top: 10px; 
+        width: 100%;
+    }
+}
+/* Categories dropdown */
+.dropdownBtn {
+    background-color: #39ff14;
+    color: black;
+    padding: 18px;
+    font-size: larger;
+    border: none;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #00B8A9;
+    z-index: 1;
+}
+.dropdownContent a {
+    color: black;
+    font-size: large;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+.dropdownContent a:hover {
+    background-color: #F8F3D4;
+}
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+.dropdown:hover .dropdownBtn {
+    -moz-box-shadow: 0 0 5px black;
+    -webkit-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
+}

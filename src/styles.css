@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+/* Custom input fields */
+input, select, textarea{
+    border-radius: 0 !important;
+    border: none !important;
+}
+select{
+    background-color: #dbd7d2 !important;
+}
+input:focus, select:focus, textarea:focus{
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    border: 2px solid black !important;
+}
+.customInput{
+    background: #dbd7d2 !important;
+    font-size: larger !important;
+}
+/* Custom buttons */
+.customBtn{
+    border-radius: 0 !important;
+    font-size: larger !important;
+}
+.customBtn:disabled{
+    cursor: no-drop !important;
+}
+.customBtn:active, .customBtn:focus{
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    border: 2px solid black !important;
+}
+.nav-link{
+    cursor: pointer !important;
+}
+.card{
+    border-radius: 0px !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+}

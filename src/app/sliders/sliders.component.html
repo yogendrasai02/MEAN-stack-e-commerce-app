@@ -1,0 +1,93 @@
+<!-- Main slider -->
+<div class="navigation-wrapper">
+
+    <div class="keen-slider keen-slider--vertical" #mainSliderRef>
+        <div class="keen-slider__slide mainSlide" *ngFor="let imgUrl of mainSliderImages">
+            <img [src]="imgUrl" [alt]="imgUrl" class="img-fluid">
+        </div>
+    </div>
+
+    <svg [ngClass]="
+        'arrow arrow--left ' + (mainCurrentSlide === 0 ? 'arrow--disabled' : '')
+      " (click)="mainSlider.prev()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+    </svg>
+
+    <svg *ngIf="mainSlider" [ngClass]="
+        'arrow arrow--right ' +
+        (mainSlider.details().size - 1 === mainCurrentSlide ? 'arrow--disabled' : '')
+      " (click)="mainSlider.next()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+    </svg>
+
+</div>
+
+<!-- Dot navigation helper -->
+<div class="dots">
+
+    <button (click)="mainSlider.moveToSlideRelative(i)" *ngFor="let slide of dotHelper; let i = index"
+        [class]="'dot ' + (i === mainCurrentSlide ? 'active' : '')">
+    </button>
+
+</div>
+
+<!-- Categories slider -->
+<div class="container mb-4">
+
+    <hr>
+
+    <!-- Todays deals slider -->
+    <div class="navigation-wrapper mb-4">
+        <h2 class="sliderTitle">Todays deals</h2>
+        <div class="keen-slider keen-slider--vertical" #dealsRef>
+            <div class="keen-slider__slide" *ngFor="let img of dealsSliderImages">
+                <div class="card">
+                    <img [src]="img" class="card-img-top responsiveImg" alt="image">
+                    <div class="card-body">
+                        <h5 class="card-title">Potatoes</h5>
+                        <p>Content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <svg [ngClass]="
+      'arrow arrow--left ' + (dealsCurrentSlide === 0 ? 'arrow--disabled' : '')
+    " (click)="dealsSlider.prev()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+        </svg>
+
+        <svg *ngIf="dealsSlider" [ngClass]="
+      'arrow arrow--right ' +
+      (dealsSlider.details().relativeSlide === dealsSliderImages.length - dealsSlider.details().slidesPerView ? 'arrow--disabled' : '')
+    " (click)="dealsSlider.next()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        </svg>
+
+    </div>
+
+    <hr>
+
+    <!-- Categories slider -->
+    <div class="navigation-wrapper mb-4">
+
+        <h2 class="sliderTitle">Shop by category</h2>
+        <div class="keen-slider" #categoriesSliderRef>
+            <div class="keen-slider__slide customSlide" *ngFor="let obj of categorySliderImages">
+                <div class="card h-100">
+                    <img [src]="obj.imgPath" class="card-img-top responsiveImg" [alt]="obj.name">
+                    <div class="card-body">
+                        <h5 class="card-title">{{obj.name}}</h5>
+                        <p>Content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- Add more sliders as per requirement -->
+
+</div>
