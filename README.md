@@ -1,3 +1,5 @@
+# Tech stack: MEAN
+The project is still under development
 # HappySupermarket
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
